@@ -15,7 +15,7 @@ public class Main {
         cdriver.navigate().to("http://www.google.com");  //.refresh(); .back(); .forward();
         //3. close the browser
         cdriver.close();
-        // firefox browser----------------> firefoxdriver
+        // firefox browser---------------> firefoxdriver
         //1. Open the chrome browser
         System.setProperty("webdriver.gecko.driver", "D:\\Selenium\\drivers\\geckodriver.exe");
         WebDriver fdriver= new FirefoxDriver();
