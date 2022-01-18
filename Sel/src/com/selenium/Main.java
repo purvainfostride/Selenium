@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+//import java.time.Duration;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -19,6 +21,8 @@ public class Main {
         //1. Open the chrome browser
         System.setProperty("webdriver.gecko.driver", "D:\\Selenium\\drivers\\geckodriver.exe");
         WebDriver fdriver= new FirefoxDriver();
+//        fdriver.manage().timeouts().scriptTimeout(Duration.ofMinutes(2));
+      //  fdriver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         //2. Navigate to the URL
         fdriver.get("http://www.google.com");
 
