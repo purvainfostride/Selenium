@@ -8,6 +8,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import java.time.Duration;
 import java.io.File;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SeleniumMaven1 {
     public static void main(String[] args)  throws InterruptedException {
@@ -15,7 +17,7 @@ public class SeleniumMaven1 {
         WebDriverManager.chromiumdriver().setup();
         WebDriver driver = new ChromeDriver();
         Actions actions = new Actions(driver);
-        String userName = "Cassidy Hope";
+        String userName = "Cassidy Dope";
 
        //................................................... ........LOGIN....................
         driver.get("https://opensource-demo.orangehrmlive.com/index.php/dashboard"); //to get to this page
@@ -30,15 +32,20 @@ public class SeleniumMaven1 {
         actions.moveToElement(users).perform();
         WebElement userButton= driver.findElement(By.id("menu_admin_viewSystemUsers"));
         userButton.click();
-          driver.findElement(By.name("btnAdd")).click();
-        driver.findElement(By.name("systemUser[employeeName][empName]")).sendKeys("Cassidy Hope");
+        //.........................................................Adding user
+        driver.findElement(By.name("btnAdd")).click();
+        driver.findElement(By.name("systemUser[employeeName][empName]")).sendKeys("Cassidy Dope");
         driver.findElement(By.id("systemUser_userName")).sendKeys(userName);
         driver.findElement(By.name("systemUser[password]")).sendKeys("Hello*#@1234");
         driver.findElement(By.name("systemUser[confirmPassword]")).sendKeys("Hello*#@1234");
         WebElement saveButton = driver.findElement(By.xpath("//input[@value='Save']"));
         Thread.sleep(2000);
         saveButton.click();
-        driver.findElement(By.name("searchSystemUser[userName]")).sendKeys(userName);
+    //  Thread.sleep(2000);
+      //  WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+      //  wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("searchSystemUser[userName]")));
+        //..........................................................Searching user
+        driver.findElement(By.name("searchSystemUser[userName]")).sendKeys("demo1");
         driver.findElement(By.id("searchBtn")).click();
        /*   String searchedUsernameXpath = "//a[contains(text(),'%s')]";
        WebElement searchedUsername = driver.findElement(By.xpath(String.format(searchedUsernameXpath, userName)));
@@ -47,7 +54,13 @@ public class SeleniumMaven1 {
          /*   driver.findElement(By.id("welcome")).click();
         Thread.sleep(2000);
         driver.findElement(By.partialLinkText("Logout")).click(); */
-      //  driver.findElement(By.id("btnDelete")).sendKeys("Aatim9");
+
+       // Thread.sleep(2000);
+       // driver.close();
+        //................................................... ........DELETE....................
+        driver.findElement(By.id("ohrmList_chkSelectRecord_54")).click();
+        driver.findElement(By.name("btnDelete")).click();
+        driver.findElement(By.id("dialogDeleteBtn")).click();
 
 
 
