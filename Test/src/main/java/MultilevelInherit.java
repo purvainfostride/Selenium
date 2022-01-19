@@ -3,11 +3,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-
  class parent{
      WebDriver driver = new ChromeDriver();
-     String userName = "Cassidy Dope4";
+     String userName = "Cassidy Dope5";
     void login() {
         driver.get("https://opensource-demo.orangehrmlive.com/index.php/dashboard"); //to get to this page
         driver.manage().window().maximize();
@@ -33,7 +31,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
     }
     void searchUser() throws InterruptedException{
         Thread.sleep(2000);
-        driver.findElement(By.name("searchSystemUser[userName]")).sendKeys("Cassidy Dope1");
+        driver.findElement(By.name("searchSystemUser[userName]")).sendKeys("Cassidy Dope2");
         driver.findElement(By.id("searchBtn")).click();
     }
     void deleteUser()throws InterruptedException{
