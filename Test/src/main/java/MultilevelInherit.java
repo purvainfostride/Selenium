@@ -4,9 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
  class parent{
      WebDriver driver = new ChromeDriver();
-     String userName = "Cassidy Dope";
+     String userName = "Cassidy Dope4";
     void login() {
         driver.get("https://opensource-demo.orangehrmlive.com/index.php/dashboard"); //to get to this page
         driver.manage().window().maximize();
@@ -22,7 +23,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
         WebElement userButton = driver.findElement(By.id("menu_admin_viewSystemUsers"));
         userButton.click();
         driver.findElement(By.name("btnAdd")).click();
-        driver.findElement(By.name("systemUser[employeeName][empName]")).sendKeys("Cassidy Dope");
+        driver.findElement(By.name("systemUser[employeeName][empName]")).sendKeys("Cassidy Hope");
         driver.findElement(By.id("systemUser_userName")).sendKeys(userName);
         driver.findElement(By.name("systemUser[password]")).sendKeys("Hello*#@1234");
         driver.findElement(By.name("systemUser[confirmPassword]")).sendKeys("Hello*#@1234");
@@ -30,16 +31,22 @@ import org.openqa.selenium.chrome.ChromeDriver;
         Thread.sleep(2000);
         saveButton.click();
     }
-    void searchUser(){
-        driver.findElement(By.name("searchSystemUser[userName]")).sendKeys("demo1");
+    void searchUser() throws InterruptedException{
+        Thread.sleep(2000);
+        driver.findElement(By.name("searchSystemUser[userName]")).sendKeys("Cassidy Dope1");
         driver.findElement(By.id("searchBtn")).click();
+    }
+    void deleteUser()throws InterruptedException{
+        Thread.sleep(2000);
+        driver.findElement(By.name("chkSelectRow[]")).click();
+        driver.findElement(By.name("btnDelete")).click();
+        driver.findElement(By.id("dialogDeleteBtn")).click();
     }
     void logoutUser () throws InterruptedException{
         driver.findElement(By.id("welcome")).click();
         Thread.sleep(2000);
         driver.findElement(By.partialLinkText("Logout")).click();
     }
-
  }
 
 public class MultilevelInherit extends parent{
@@ -49,6 +56,7 @@ public class MultilevelInherit extends parent{
         I.login();
         I.addUser();
         I.searchUser();
+        I.deleteUser();
         I.logoutUser();
 
     }
