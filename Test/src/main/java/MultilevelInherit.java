@@ -66,7 +66,7 @@ class parent{
           } */
     void searchUser() throws InterruptedException{
         Thread.sleep(2000);
-        driver.findElement(By.name("searchSystemUser[userName]")).sendKeys("userno30");
+        driver.findElement(By.name("searchSystemUser[userName]")).sendKeys(userName);
         driver.findElement(By.id("searchBtn")).click();
     }
     void deleteUser()throws InterruptedException{
@@ -99,9 +99,11 @@ class parent{
         driver.findElement(By.id("menu_pim_addEmployee")).click();
         WebElement photograph= driver.findElement(By.xpath("//*[contains(@id,'photofile')]"));
         photograph.sendKeys("C:\\Users\\Purva\\Downloads\\download.png");
-      photograph.click();
-
+        photograph.click();
     }
+    //void myInfo(){
+
+    //}
   /* void logoutUser () throws InterruptedException{
         driver.findElement(By.id("welcome")).click();
         Thread.sleep(2000);
@@ -124,6 +126,7 @@ public class MultilevelInherit extends parent{
         I.deleteUser();
         I.menuRecruit();
         I.menuPim();
+     //   I.myInfo();
       //  I.logoutUser();
 
 

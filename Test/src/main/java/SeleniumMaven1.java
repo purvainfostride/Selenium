@@ -62,7 +62,14 @@ public class SeleniumMaven1 {
         driver.findElement(By.name("btnDelete")).click();
         driver.findElement(By.id("dialogDeleteBtn")).click(); */
         //.....................................................................................
+        WebElement recruit= driver.findElement(By.xpath("//*[contains(@id,'menu_pim_viewMyDetails')]"));
+        recruit.click();
+        WebElement recruit1= driver.findElement(By.xpath("//*[contains(@id,'empPic')]"));
+        recruit1.click();
 
+        //driver.findElement(By.id("candidateSearch_fromDate")).click();
+       // driver.findElement(By.id("candidateSearch_fromDate")).sendKeys("2022-01-13");
+      //  driver.findElement(By.id("candidateSearch_fromDate")).sendKeys(Keys.ENTER);
 
 
 
