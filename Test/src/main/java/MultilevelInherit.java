@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
 import java.util.Random;
@@ -24,11 +23,6 @@ class parent{
         driver.findElement(By.name("Submit")).click();
     }
     void test() {
-     /* driver.get(driver.getCurrentUrl());
-        String expectedTitle ="OraangeHRM";
-        String actualTitle =driver.getTitle();
-        //It will only show the message if it will fail and also rest of the functions will not execute as well
-        Assert.assertEquals(actualTitle,expectedTitle,"Title");*/
         SoftAssert softAssert= new SoftAssert();
         driver.get(driver.getCurrentUrl());
         String expectedTitle ="OraangeHRM";
@@ -48,7 +42,6 @@ class parent{
         userButton.click();
     }
    void addUser() throws InterruptedException{
-
         driver.findElement(By.name("btnAdd")).click();
         driver.findElement(By.name("systemUser[employeeName][empName]")).sendKeys("Ananya Dash");
         driver.findElement(By.id("systemUser_userName")).sendKeys(userName);
@@ -58,12 +51,6 @@ class parent{
         Thread.sleep(2000);
         saveButton.click();
       }
-          /* void edit() throws InterruptedException{
-              //driver.findElement(By.partialLinkText("Admin")).click();
-              WebElement editUser = driver.findElement(By.xpath("//*[@id=\"resultTable\"]/tbody/tr[1]/td[2]/a"));
-              Thread.sleep(2000);
-            editUser.click();
-          } */
     void searchUser() throws InterruptedException{
         Thread.sleep(2000);
         driver.findElement(By.name("searchSystemUser[userName]")).sendKeys(userName);
@@ -101,16 +88,12 @@ class parent{
         photograph.sendKeys("C:\\Users\\Purva\\Downloads\\download.png");
         photograph.click();
     }
-    //void myInfo(){
 
-    //}
-  /* void logoutUser () throws InterruptedException{
+  void logoutUser () throws InterruptedException{
         driver.findElement(By.id("welcome")).click();
         Thread.sleep(2000);
         driver.findElement(By.partialLinkText("Logout")).click();
-    }*/
-
-
+    }
 }
 
 public class MultilevelInherit extends parent{
@@ -121,13 +104,11 @@ public class MultilevelInherit extends parent{
         I.test();
         I.menuAdmin();
         I.addUser();
-        // I.edit();
         I.searchUser();
         I.deleteUser();
         I.menuRecruit();
         I.menuPim();
-     //   I.myInfo();
-      //  I.logoutUser();
+        I.logoutUser();
 
 
     }
